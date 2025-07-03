@@ -41,7 +41,7 @@ function Form() {
                     }
                 })
 
-                setCopyUrl(`${BASEURL}/${response.data.shortid}`)
+                setCopyUrl(`${import.meta.env.VITE_BASE_URL}/${response.data.shortid}`)
             }
         } catch (error) {
             console.error("This is an handleSubmit Error", error)
