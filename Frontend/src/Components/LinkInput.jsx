@@ -5,7 +5,6 @@ function Form() {
     const [copyurl, setCopyUrl] = useState("");
     const [url, setUrl] = useState("");
     const [error, setError] = useState("")
-    const BASEURL = 'http://localhost:5000'
 
     const validate = () => {
 
@@ -36,7 +35,7 @@ function Form() {
             }
 
             if (validate()) {
-                const response = await axios.post('http://localhost:5000/api/short', { url: url }, {
+                const response = await axios.post(`${import.meta.env.BASE_URL}/api/short`, { url: url }, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }

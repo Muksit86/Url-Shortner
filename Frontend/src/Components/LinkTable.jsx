@@ -5,8 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 function Table() {
     const [links, setLinks] = useState([])
 
-    const BASE_URL = 'http://localhost:5000/api'
-
     const linkDelete = () => toast.error('✅ Link deleted', {
         position: "top-right",
         autoClose: 5000,
@@ -24,7 +22,7 @@ function Table() {
 
     const getAllShorts = async (req, res) => {
         const token = localStorage.getItem('token')
-        const response = await axios.get('http://localhost:5000/api/shortLinks', {
+        const response = await axios.get(`${import.meta.env.BASE_URL}/api/shortLinks`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -34,7 +32,7 @@ function Table() {
 
     const deleteLink = async (shortid) => {
         const token = localStorage.getItem('token')
-        const response = await axios.delete(`http://localhost:5000/api/${shortid}`, {
+        const response = await axios.delete(`${import.meta.env.BASE_URL}/api/${shortid}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
