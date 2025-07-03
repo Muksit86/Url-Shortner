@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-[#ededed];
+  @apply m-0;
+  @apply p-0;
+  
+}
