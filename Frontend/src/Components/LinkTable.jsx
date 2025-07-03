@@ -22,7 +22,7 @@ function Table() {
 
     const getAllShorts = async (req, res) => {
         const token = localStorage.getItem('token')
-        const response = await axios.get(`${import.meta.env.BASE_URL}/api/shortLinks`, {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/shortLinks`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -32,7 +32,7 @@ function Table() {
 
     const deleteLink = async (shortid) => {
         const token = localStorage.getItem('token')
-        const response = await axios.delete(`${import.meta.env.BASE_URL}/api/${shortid}`, {
+        const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/${shortid}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }

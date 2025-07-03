@@ -59,7 +59,7 @@ function RegistrationPage() {
     }
 
     const checkInputFields = async (email, name) => {
-        const res = await axios.post(`${import.meta.env.BASE_URL}/auth/user/inputfeilds`, { email, name })
+        const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/user/inputfeilds`, { email, name })
 
         if (res.data.available == true) {
             return true
@@ -80,7 +80,7 @@ function RegistrationPage() {
 
             if (Object.keys(validateErrors).length === 0) {
                 // Submit form
-                await axios.post(`${import.meta.env.BASE_URL}/auth/user/registration`, values)
+                await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/user/registration`, values)
                 navigate("/login");
 
                 // Optionally reset form
